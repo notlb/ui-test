@@ -1,0 +1,22 @@
+// Normally I would break these two out into their own files.
+
+// colors
+$primary:   #124385;
+$secondary: #E5EBEE;
+$tertiary:  #1E344C;
+// mixins
+
+// Use this badboy with @extend. Placeholders generate less code.
+%clearfix{
+  &:before,
+  &:after{
+    content: "";
+    display: table;
+  }
+  &:after{
+    clear: both;
+  }
+  &{
+    *zoom: 1;
+  }
+}

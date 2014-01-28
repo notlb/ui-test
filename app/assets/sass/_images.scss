@@ -1,0 +1,17 @@
+.image-container{
+  width: 30%;
+  float: left;
+  margin-right: 5%;
+  &:nth-child(3n+1){
+    // this would select every third image-container.
+    margin-right: 0;
+  }
+  .image{
+    height: 150px;
+    overflow: hidden;
+  }
+  img{
+    max-width: 100%;
+    cursor: pointer;
+  }
+}

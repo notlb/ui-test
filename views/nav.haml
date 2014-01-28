@@ -2,14 +2,13 @@
 - sub_navigation = ['Images', 'Video', 'Games']
 
 %img.logo{src: "images/logo.png"}
-.navigation
+%nav.nav
   %ul
     - core_navigation.each do |item|
       %li
         %a{href: '#'}
           = item
-
-.sub-navigation
+.sub-nav.nav
   %ul
     - sub_navigation.each do |item|
       %li

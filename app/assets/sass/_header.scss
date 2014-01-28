@@ -1,0 +1,52 @@
+.logo{
+  position: absolute;
+  left: 50%;
+  margin-left: -41px;
+  top: 9px;
+}
+.nav{
+  font-family: Arial, 'Helvetica', sans-serif;
+  text-align: center;
+  background-color: $primary;
+  ul{
+    display: inline-block;
+    height:  60px;
+    margin: 0;
+    list-style: none;
+    li{
+      display: inline-block;
+      text-align: left;
+      float: left;
+      height: 60px;
+      margin: 0;
+      background-color: $primary;
+      width: 150px;
+      &:nth-child(4){
+        margin-left: 150px;
+      }
+      a{
+        color: #fff;
+        text-decoration: none;
+        line-height: 60px;
+        padding: 0 15px;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+.sub-nav{
+  background-color: $secondary;
+  ul{
+    padding: 0;
+    li{
+      background-color: $secondary;
+      width: auto;
+      margin: 0;
+      a{
+        color: #133944;
+      }
+    }
+  }
+}
