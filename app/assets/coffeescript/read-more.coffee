@@ -1,6 +1,4 @@
-$ ->
-
-  window.LP = (->
+(->
 
     initialHeight = 400
 
@@ -29,5 +27,4 @@ $ ->
             $('.lightbox').remove()
 
     }
-
-  )()
+)()
