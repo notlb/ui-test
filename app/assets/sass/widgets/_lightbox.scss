@@ -7,8 +7,25 @@
   bottom: 0;
   .lightboxImage{
     position: absolute;
-    left: 30%;
-    top: 30%;
-    border: 10px solid white;
+    top: 10%;
+    left: 50%;
+    border: 10px solid #fff;
+  }
+  .close{
+    background-color: $tertiary;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    z-index: 3;
+    cursor: pointer;
+    color: #fff;
+    font-size: 30px;
+    padding: 0 5px;
+    &:hover{
+      background-color: lighten($tertiary, 5%);
+    }
+    &:active{
+      background-color: darken($tertiary, 5%);
+    }
   }
 }

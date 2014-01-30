@@ -42,9 +42,38 @@
       };
     })();
     lightbox = (function() {
+      var buildLightbox, closeLightBox, openLightBox;
+
+      buildLightbox = function($image) {
+        var close, container, doppelganger;
+
+        doppelganger = new Image();
+        doppelganger.src = $image.attr('src');
+        $(doppelganger).addClass('lightboxImage').css({
+          marginLeft: -(doppelganger.width + 20) / 2
+        });
+        container = document.createElement('div');
+        close = document.createElement('div');
+        $(close).addClass('close').text('×').css({
+          marginLeft: (doppelganger.width - 34) / 2
+        });
+        return $(container).addClass('lightbox').append(close, doppelganger);
+      };
+      openLightBox = function(e) {
+        var $image;
+
+        $image = $(e.currentTarget);
+        lightbox = buildLightbox($image);
+        return $('body').append(lightbox);
+      };
+      closeLightBox = function(e) {
+        e.preventDefault;
+        return $(this).parent().remove();
+      };
       return {
         init: function() {
-          return console.log("I'm a light box");
+          $('.image img').on('click', openLightBox);
+          return $(document).on('click', ".lightbox .close", closeLightBox);
         }
       };
     })();

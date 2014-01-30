@@ -30,9 +30,36 @@ LP = ((window, document, undefined_) ->
     init: () ->
       $('button[data-readmore]').on 'click', toggleLength
   )()
+
   lightbox = (()->
+
+    buildLightbox = ($image) ->
+      doppelganger = new Image()
+      doppelganger.src = $image.attr('src')
+      $(doppelganger).addClass('lightboxImage')
+      .css marginLeft: -(doppelganger.width + 20)/2
+
+      container = document.createElement('div')
+
+      close = document.createElement('div')
+      $(close).addClass('close').text('×')
+      .css marginLeft: (doppelganger.width - 34)/2
+
+      $(container).addClass('lightbox').append(close, doppelganger)
+
+    openLightBox = (e) ->
+      $image = $(e.currentTarget)
+      lightbox = buildLightbox($image)
+      $('body').append(lightbox)
+
+    closeLightBox = (e) ->
+      e.preventDefault
+      $(@).parent().remove()
+
     init: () ->
-      console.log "I'm a light box"
+      $('.image img').on 'click', openLightBox
+      # 86'd the key press controls in favor of an 'x'. The metaphor is well known.
+      $(document).on 'click', ".lightbox .close", closeLightBox
   )()
 
   init: () ->
